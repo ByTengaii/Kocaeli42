@@ -6,12 +6,13 @@
 /*   By: gagir <gagir@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:06:34 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/13 16:06:40 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/13 16:50:39 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c){
-	write(1,&c,1);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }

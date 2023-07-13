@@ -6,26 +6,25 @@
 /*   By: gagir <gagir@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:07:21 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/13 16:07:22 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/13 17:24:30 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include <unistd.h>
 
-void ft_putchar( char c ){
-	write(1,&c,1)
+void	ft_putchar( char c )
+{
+	write(1, &c, 1);
 }
 
-void ft_print_alphabet(void){
+void	ft_print_alphabet( void )
+{
+	char	letter;
 
-	//Define begining of alphabet
-	char letter;
-	char ='z';
-
-	//start printing
-	while(letter >= 'a'){
+	letter = 'z';
+	while (letter >= 'a')
+	{
 		ft_putchar(letter);
 		letter--;
 	}
-
 }
