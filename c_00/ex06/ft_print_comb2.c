@@ -6,16 +6,24 @@
 /*   By: gagir <gagir@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:08:11 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/13 16:38:05 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/13 19:56:49 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-void ft_print_comb2(void) {
-    char buffer[7];
-    int i, j;
-
+void	ft_print_comb2( void ) 
+{
+    char	buffer[7];
+    int	i;
+	int	j;
+	
+	i=0;
+	while
+	{
+		bu
+		i++;
+	}
     for (i = 0; i <= 98; i++) {
         for (j = i + 1; j <= 99; j++) {
             buffer[0] = '0' + (i / 10);// tens digit
