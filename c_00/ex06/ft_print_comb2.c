@@ -6,11 +6,11 @@
 /*   By: gagir <gagir@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:08:11 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/13 19:56:49 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/14 11:12:39 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include <unistd.h>
 
 void	ft_print_comb2( void ) 
 {
@@ -19,14 +19,12 @@ void	ft_print_comb2( void )
 	int	j;
 	
 	i=0;
-	while
+	while(i <= 98)
 	{
-		bu
-		i++;
-	}
-    for (i = 0; i <= 98; i++) {
-        for (j = i + 1; j <= 99; j++) {
-            buffer[0] = '0' + (i / 10);// tens digit
+		j = i + 1;
+		while(j <= 99)
+		{	
+			buffer[0] = '0' + (i / 10);// tens digit
 			buffer[1] = '0' + (i % 10); // ones digit
             buffer[2] = ' ';
             buffer[3] = '0' + (j / 10); //tens digit
@@ -39,6 +37,13 @@ void	ft_print_comb2( void )
 			}else{
 			 	write(1, buffer, 7); 
 			}
-        }
-    }
+			j++;
+		}
+		i++;
+	}
+}
+
+int	main()
+{
+	ft_print_comb2();
 }
