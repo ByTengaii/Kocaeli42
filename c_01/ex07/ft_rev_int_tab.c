@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 18:17:58 by gagir             #+#    #+#             */
+/*   Updated: 2023/07/15 18:18:33 by gagir            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_rev_int_tab(int *tab, int size)
 {
-	int temp;
-	int	cursor_begin;
-	int	cursor_last;
-	
+	int		temp;
+	int		cursor_begin;
+	int		cursor_last;
+
 	cursor_last = size - 1;
 	cursor_begin = 0;
 	while (cursor_begin < cursor_last)
