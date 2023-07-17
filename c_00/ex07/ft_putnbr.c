@@ -12,6 +12,14 @@
 
 #include <unistd.h>
 
+void	write_buffer(char buffer[], int index)
+{
+	while (index > 0)
+	{
+		write(1, &buffer[--index], 1);
+	}
+}
+
 void	ft_putnbr(int nb)
 {
 	char	buffer[12];
@@ -37,11 +45,15 @@ void	ft_putnbr(int nb)
 		nb /= 10;
 	}
 	if (is_negative)
-	{
 		buffer[index++] = '-';
-	}
-	while (index > 0)
-	{
-		write(1, &buffer[--index], 1);
-	}
+	write_buffer(buffer, index);
 }
+/*
+int	main(void)
+{
+	ft_putnbr(-31);
+	ft_putnbr(31);
+	ft_putnbr(0);
+	ft_putnbr(-3162);
+	return (0);
+}*/
