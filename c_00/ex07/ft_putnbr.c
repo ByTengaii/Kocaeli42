@@ -48,12 +48,3 @@ void	ft_putnbr(int nb)
 		buffer[index++] = '-';
 	write_buffer(buffer, index);
 }
-/*
-int	main(void)
-{
-	ft_putnbr(-31);
-	ft_putnbr(31);
-	ft_putnbr(0);
-	ft_putnbr(-3162);
-	return (0);
-}*/

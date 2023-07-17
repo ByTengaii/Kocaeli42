@@ -24,10 +24,3 @@ void	ft_is_negative( int n )
 	else
 		ft_putchar('N');
 }
-/*
-int main(void)
-{
-	ft_is_negative(-1);
-	ft_is_negative(5);
-	return 0;
-}*/
