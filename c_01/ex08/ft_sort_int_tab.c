@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 void	swap(int *xp, int *yp)
 {
 	int		temp;
@@ -48,22 +46,3 @@ void	ft_sort_int_tab(int *tab, int size)
 		i++;
 	}
 }
-
-/*
-void printArray(int arr[], int size)
-{
-    int i;
-    for (i = 0; i < size; i++)
-        printf("%d ", arr[i]);
-}
-
-// Driver program to test above functions
-int	main( void )
-{
-    int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
-    int n = sizeof(arr) / sizeof(arr[0]);
-    ft_sort_int_tab(arr, n);
-    printf("Sorted array: \n");
-    printArray(arr, n);
-    return 0;
-} */
