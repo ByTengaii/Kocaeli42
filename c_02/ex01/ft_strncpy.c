@@ -1,4 +1,14 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gagir <gagir@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/19 11:50:14 by gagir             #+#    #+#             */
+/*   Updated: 2023/07/19 11:50:21 by gagir            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
@@ -17,15 +27,3 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	}
 	return (dest);
 }
-/*
-#include <stdio.h>
-int    main()
-{
-    char src[] = "Hello";
-    char dest[] = "World1";
-    char dest1[] = "World2";
-
-    printf("%s", ft_strncpy(dest, src, 3));
-    printf("\n%s", ft_strncpy(dest, src, 5));
-    printf("\n%s", ft_strncpy(dest, src, 7));
-}*\
