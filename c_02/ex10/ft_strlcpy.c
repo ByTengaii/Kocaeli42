@@ -6,14 +6,14 @@
 /*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 16:57:34 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/20 14:43:04 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/20 15:31:16 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int count;
-	unsigned int index;
+	unsigned int	count;
+	unsigned int	index;
 
 	count = 0;
 	index = 0;
