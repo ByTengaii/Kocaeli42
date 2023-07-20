@@ -6,11 +6,9 @@
 /*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 20:20:32 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/15 20:22:12 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/20 14:45:56 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 int	ft_str_is_uppercase(char *str)
 
@@ -26,10 +24,3 @@ int	ft_str_is_uppercase(char *str)
 	}
 	return (1);
 }
-/*#include<stdio.h>
- * int    main()
-{
-       printf("%d", ft_str_is_uppercase("ABCDEFGH"));
-       printf("\n%d", ft_str_is_uppercase("ABCDEFGHaI"));
-       printf("\n%d", ft_str_is_uppercase("-_134556ABCDEFGaH67"));
-}*/

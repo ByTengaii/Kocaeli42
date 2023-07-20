@@ -6,11 +6,9 @@
 /*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 22:09:41 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/15 22:10:15 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/20 14:46:48 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 char	*ft_strlowcase(char *str)
 
@@ -26,9 +24,3 @@ char	*ft_strlowcase(char *str)
 	}
 	return (str);
 }
-/*#include<stdio.h>
- * int    main()
-{
-    char str[] = "ABCDEFGH";
-    printf("%s", ft_strlowcase(str));
-}*/

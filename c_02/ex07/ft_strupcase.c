@@ -6,11 +6,9 @@
 /*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 22:07:32 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/15 22:08:35 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/20 14:46:27 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 char	*ft_strupcase(char *str)
 {
@@ -25,9 +23,3 @@ char	*ft_strupcase(char *str)
 	}
 	return (str);
 }
-/*#include<stdio.h>
- * int    main()
-{
-    char str[] = "abcdefghj";
-    printf("%s", ft_strupcase(str));
-}*/
