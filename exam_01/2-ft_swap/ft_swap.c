@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
+/*   By: gagir <gagir@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 21:45:23 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/19 11:58:48 by gagir            ###   ########.fr       */
+/*   Created: 2023/07/20 15:36:37 by gagir             #+#    #+#             */
+/*   Updated: 2023/07/20 15:37:30 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+void	ft_swap(int *a, int *b)
 {
-	while (n--)
-	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		if (*s1 == '\0')
-			return (0);
-		s1++;
-		s2++;
-	}
-	return (0);
+	int		temp;
+
+	temp = *a;
+	*a = *b;
+	b* = temp;
 }

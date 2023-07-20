@@ -6,23 +6,20 @@
 /*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 21:46:25 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/18 21:50:55 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/19 14:13:15 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-char *ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
 	while (*dest != '\0')
 		dest++;
-	
 	while (*src != '\0')
 	{
 		*dest = *src;
 		dest++;
 		src++;
 	}
-
 	*dest = '\0';
 	return (dest);
 }

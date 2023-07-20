@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
+/*   By: gagir <gagir@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 21:45:23 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/19 11:58:48 by gagir            ###   ########.fr       */
+/*   Created: 2023/07/20 15:18:15 by gagir             #+#    #+#             */
+/*   Updated: 2023/07/20 15:34:52 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_strlen(char *str)
 {
-	while (n--)
-	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		if (*s1 == '\0')
-			return (0);
-		s1++;
-		s2++;
-	}
+	int i = 0;
+	while( *(str + i) != '\0')
+		i++;	
+	return (i);
+}
+
+#include <stdio.h>
+int	main()
+{
+	int a = ft_strlen("1234567");
+	printf("%d\n",a);
 	return (0);
 }

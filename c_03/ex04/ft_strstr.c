@@ -6,16 +6,14 @@
 /*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:03:37 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/18 23:05:31 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/19 14:18:56 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char *ft_strstr(char *str, char *to_find)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 0;
 	if (to_find[0] == '\0')
@@ -31,5 +29,5 @@ char *ft_strstr(char *str, char *to_find)
 		}
 		i++;
 	}
-	return (0);	
+	return (0);
 }
