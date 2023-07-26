@@ -6,13 +6,13 @@
 /*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 04:31:02 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/25 04:43:36 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/25 10:39:09 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int		i;
 
@@ -22,20 +22,18 @@ int ft_strlen(char *str)
 	return (i);
 }
 
-int is_it_twice(char *base)
+int	is_it_twice(char *base, unsigned int size)
 {
 	int		i;
 	int		j;
-	int		size;
 
 	i = 0;
-	size = ft_strlen(base);
-	while( base[i] != '\0')
+	while (i < size)
 	{
-		j = i+1;
-		while ( j < size)
+		j = i + 1;
+		while (j < size)
 		{
-			if(base[i] == base[j])
+			if (base[i] == base[j])
 				return (0);
 			j++;
 		}
@@ -44,15 +42,14 @@ int is_it_twice(char *base)
 	return (1);
 }
 
-int base_control(char *base)
+int	base_control(char *base, unsigned int size)
 {
 	int		i;
-	int		size;
+
 	i = 0;
-	size = ft_strlen(base);
-	if( is_it_twice(base))
+	if (!is_it_twice(base, size))
 		return (0);
-	if (size == 0 || size == 1)
+	if (size == 0 || size == 1 || size == 2)
 		return (0);
 	while (base[i] != '\0')
 	{
@@ -63,11 +60,13 @@ int base_control(char *base)
 	return (i);
 }
 
-void	ft_put_base_rec (int nbr, char *base, unsigned int size)
+void	ft_put_base_rec(int nbr, char *base, unsigned int size)
 {
 	unsigned int	n;
-	char	c;
-	
+	unsigned int	b;
+	char			c;
+
+	b = size - 1;
 	if (nbr < 0)
 	{
 		write(1, "-", 1);
@@ -75,28 +74,27 @@ void	ft_put_base_rec (int nbr, char *base, unsigned int size)
 	}
 	else
 		n = nbr;
-	if (n >= size)
-		ft_put_base_rec(n / size, base, size);
-	c = base[(n % size)];
+	if (n >= b)
+		ft_put_base_rec(n / b, base, size);
+	c = base[(n % b)];
 	write(1, &c, 1);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
 {
 	int		size;
-	
-	size = ft_strlen(base);
-	if (!base_control(base))
+
+	size = ft_strlen(base) + 1;
+	if (base_control(base, size) == 0)
 		return ;
 	else
 		ft_put_base_rec(nbr, base, size);
 }
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
-int	main(char **av)
+int	main(int ac, char **av)
 {
 	ft_putnbr_base(atoi(av[1]), av[2]);
 	return 0;
-}
-
+}*/

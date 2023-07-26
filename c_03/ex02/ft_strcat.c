@@ -6,20 +6,34 @@
 /*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 21:46:25 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/19 14:13:15 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/25 15:25:17 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int		ft_strlen(char *str)
+{
+	int counter;
+
+	counter = 0;
+	while (*str != '\0')
+	{
+		counter++;
+		str++;
+	}
+	return (counter);
+}
+
 char	*ft_strcat(char *dest, char *src)
 {
-	while (*dest != '\0')
-		dest++;
+	int c;
+
+	c = ft_strlen(dest);
 	while (*src != '\0')
 	{
-		*dest = *src;
-		dest++;
+		dest[c] = *src;
+		c++;
 		src++;
 	}
-	*dest = '\0';
+	dest[c] = '\0';
 	return (dest);
 }
