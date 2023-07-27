@@ -6,14 +6,14 @@
 /*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 21:54:28 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/25 15:26:35 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/26 15:06:31 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	unsigned int c;
-	unsigned int d;
+	unsigned int	c;
+	unsigned int	d;
 
 	c = 0;
 	d = 0;

@@ -6,13 +6,13 @@
 /*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 21:46:25 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/25 15:25:17 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/26 15:06:04 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	while (*str != '\0')
@@ -25,7 +25,7 @@ int		ft_strlen(char *str)
 
 char	*ft_strcat(char *dest, char *src)
 {
-	int c;
+	int	c;
 
 	c = ft_strlen(dest);
 	while (*src != '\0')
