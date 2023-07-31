@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/29 21:20:37 by gagir             #+#    #+#             */
+/*   Updated: 2023/07/29 21:23:05 by gagir            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 int	ft_strlen(char *str)
@@ -71,21 +83,21 @@ void	ft_put_base_rec(int nbr, char *base, unsigned int size)
 int	symbol_value(char c, char *base)
 {
 	int		i;
-	
+
 	i = 0;
 	while (base[i])
 	{
 		if (base[i] == c)
-			return i;
+			return (i);
 		i++;
 	}
 	return (0);
 }
 
-int ft_pow(int base, int pow)
+int	ft_pow(int base, int pow)
 {
-	int p;
-	int result;
+	int	p;
+	int	result;
 
 	p = 0;
 	result = 1;
@@ -94,7 +106,7 @@ int ft_pow(int base, int pow)
 		result *= base;
 		p++;
 	}
-	return result;
+	return (result);
 }
 
 int	ft_atoi_base(char *str, char *base)
@@ -109,7 +121,7 @@ int	ft_atoi_base(char *str, char *base)
 	size = ft_strlen(base) + 1;
 	last_index = ft_strlen(str) - 1;
 	if (base_control(base, size) == 0)
-		return 0;
+		return (0);
 	while (last_index >= 0)
 		result += (symbol_value(str[last_index--], base) * ft_pow((size - 1), step++));
 	return result;
