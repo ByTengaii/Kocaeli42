@@ -6,7 +6,7 @@
 /*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 21:20:37 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/29 21:23:05 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/31 17:03:40 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,26 +60,6 @@ int	base_control(char *base, unsigned int size)
 	return (i);
 }
 
-void	ft_put_base_rec(int nbr, char *base, unsigned int size)
-{
-	unsigned int	n;
-	unsigned int	b;
-	char			c;
-
-	b = size - 1;
-	if (nbr < 0)
-	{
-		write(1, "-", 1);
-		n = nbr * (-1);
-	}
-	else
-		n = nbr;
-	if (n >= b)
-		ft_put_base_rec(n / b, base, size);
-	c = base[(n % b)];
-	write(1, &c, 1);
-}
-
 int	symbol_value(char c, char *base)
 {
 	int		i;
@@ -91,7 +71,7 @@ int	symbol_value(char c, char *base)
 			return (i);
 		i++;
 	}
-	return (0);
+	return (-1);
 }
 
 int	ft_pow(int base, int pow)
@@ -115,7 +95,9 @@ int	ft_atoi_base(char *str, char *base)
 	int		last_index;
 	int		result;
 	int		step;
+	int		symbol;
 
+	symbol = 1;
 	step = 0;
 	result = 0;
 	size = ft_strlen(base) + 1;
@@ -123,8 +105,18 @@ int	ft_atoi_base(char *str, char *base)
 	if (base_control(base, size) == 0)
 		return (0);
 	while (last_index >= 0)
-		result += (symbol_value(str[last_index--], base) * ft_pow((size - 1), step++));
-	return result;
+		if(str[last_index] == '-')
+		{
+			symbol *= (-1);
+			last_index--;
+		}
+		else
+		{
+			if(symbol_value(str[last_index], base) == -1)
+				return (0);
+			result += (symbol_value(str[last_index--], base) * ft_pow((size - 1), step++));
+		}
+		return (result * symbol);
 }
 
 #include <stdio.h>

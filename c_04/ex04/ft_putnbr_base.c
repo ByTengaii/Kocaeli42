@@ -6,7 +6,7 @@
 /*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 04:31:02 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/25 10:39:09 by gagir            ###   ########.fr       */
+/*   Updated: 2023/07/31 16:50:16 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,11 +90,3 @@ void	ft_putnbr_base(int nbr, char *base)
 	else
 		ft_put_base_rec(nbr, base, size);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int	main(int ac, char **av)
-{
-	ft_putnbr_base(atoi(av[1]), av[2]);
-	return 0;
-}*/
