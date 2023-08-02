@@ -10,28 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 int	ft_strlen(char *str)
 {
-	int		i;
+	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 		i++;
 	return (i);
 }
 
-int	is_it_twice(char *base, unsigned int size)
+int	check_base(char *base)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (i < size)
+	if (ft_strlen(base) < 2)
+		return (0);
+	while (base[i])
 	{
+		if (base[i] < 32 || base[i] > 126 || base[i] == '-' || base[i] == '+')
+			return (0);
 		j = i + 1;
-		while (j < size)
+		while (base[j])
 		{
 			if (base[i] == base[j])
 				return (0);
@@ -42,86 +44,60 @@ int	is_it_twice(char *base, unsigned int size)
 	return (1);
 }
 
-int	base_control(char *base, unsigned int size)
+int	ft_atoi_sign(char *str, int *sign)
 {
-	int		i;
+	int	i;
 
 	i = 0;
-	if (!is_it_twice(base, size))
-		return (0);
-	if (size == 0 || size == 1 || size == 2)
-		return (0);
-	while (base[i] != '\0')
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	while (str[i] == '-' || str[i] == '+')
 	{
-		if ((base[i] == '-') || (base[i] == '+') || (base[i] == ' '))
-			return (0);
+		if (str[i] == '-')
+			*sign *= -1;
 		i++;
 	}
+	if (*sign % 2 == 1)
+		return (i);
 	return (i);
 }
 
-int	symbol_value(char c, char *base)
+int	ft_value(char *str, char *base, int i)
 {
-	int		i;
+	int	j;
 
-	i = 0;
-	while (base[i])
+	j = 0;
+	while (base[j])
 	{
-		if (base[i] == c)
-			return (i);
-		i++;
+		if (str[i] == base[j])
+			return (j);
+		j++;
 	}
 	return (-1);
 }
 
-int	ft_pow(int base, int pow)
-{
-	int	p;
-	int	result;
-
-	p = 0;
-	result = 1;
-	while (p < pow)
-	{
-		result *= base;
-		p++;
-	}
-	return (result);
-}
-
 int	ft_atoi_base(char *str, char *base)
 {
-	int		size;
-	int		last_index;
-	int		result;
-	int		step;
-	int		symbol;
+	int	sign;
+	int	i;
+	int	j;
+	int	res;
+	int	len;
 
-	symbol = 1;
-	step = 0;
-	result = 0;
-	size = ft_strlen(base) + 1;
-	last_index = ft_strlen(str) - 1;
-	if (base_control(base, size) == 0)
+	sign = 1;
+	res = 0;
+	if (check_base(base) == 0)
 		return (0);
-	while (last_index >= 0)
-		if(str[last_index] == '-')
-		{
-			symbol *= (-1);
-			last_index--;
-		}
+	i = ft_atoi_sign(str, &sign);
+	len = ft_strlen(base);
+	while (str[i])
+	{
+		j = ft_value(str, base, i);
+		if (j == -1)
+			break ;
 		else
-		{
-			if(symbol_value(str[last_index], base) == -1)
-				return (0);
-			result += (symbol_value(str[last_index--], base) * ft_pow((size - 1), step++));
-		}
-		return (result * symbol);
-}
-
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	printf("%d\n",ft_atoi_base(av[1], av[2]));
-	return 0;
+			res = (res * len) + j;
+		i++;
+	}
+	return (sign * res);
 }
