@@ -6,7 +6,7 @@
 /*   By: gagir < gagir@student.42kocaeli.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 04:31:02 by gagir             #+#    #+#             */
-/*   Updated: 2023/07/31 16:50:16 by gagir            ###   ########.fr       */
+/*   Updated: 2023/08/02 17:40:39 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	ft_strlen(char *str)
 
 int	is_it_twice(char *base, unsigned int size)
 {
-	int		i;
-	int		j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	while (i < size)
