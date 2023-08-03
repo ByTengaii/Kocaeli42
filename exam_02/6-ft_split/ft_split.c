@@ -42,23 +42,36 @@ char **ft_split(char *str)
 {
 	int words = count_word(str);
 
-	char **arr = (char*)malloc(sizeof(char*) + (words+1));
+	char **arr = (char**)malloc(sizeof(char*) * (words+1));
 	if(arr)
 	{
 		for (int i = 0 ; i < words ; i++)
 		{
-			while(*str == ' ' || *str == '\t' || *str == '\n')
+			while(*str == ' ' || *str == '\t' || *str == '\n')
 				str++;
 			arr[i] = get_next_word(&str);
 			if(!arr[i])
 			{
 				for(int j =  0; j < i ; j++)
-				{
-
-				}
+					free(arr[j]);
+				free(arr);
+				return NULL;
 			}
 		}
+		return arr;
 	}
 	else
 		return NULL;
+}
+
+#include <stdio.h>
+int main(int ac, char **av)
+{
+	char **arr = ft_split(av[1]);
+
+	int i = 0;
+
+	while (i < 4)
+		printf("%s\n", arr[i++]);
+
 }
