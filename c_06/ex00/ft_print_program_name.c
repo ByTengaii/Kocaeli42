@@ -6,14 +6,14 @@
 /*   By: gagir <gagir@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:05:12 by gagir             #+#    #+#             */
-/*   Updated: 2023/08/03 12:05:17 by gagir            ###   ########.fr       */
+/*   Updated: 2023/08/03 16:02:34 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int c;
+	int	c;
 
 	c = 0;
 	if (argc > 0)

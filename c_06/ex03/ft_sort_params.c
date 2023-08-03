@@ -6,68 +6,58 @@
 /*   By: gagir <gagir@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:07:25 by gagir             #+#    #+#             */
-/*   Updated: 2023/08/03 12:07:28 by gagir            ###   ########.fr       */
+/*   Updated: 2023/08/03 16:10:30 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(const char *str)
+void	ft_printf_params(char *argv)
 {
-	int c;
+	int	i;
 
-	c = 0;
-	while (str[c] != '\0')
+	i = 0;
+	while (argv[i])
 	{
-		write(1, &str[c], 1);
-		c++;
+		write(1, &argv[i], 1);
+		i++;
 	}
 	write(1, "\n", 1);
 }
 
-int		ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int c;
+	int	i;
 
-	c = 0;
-	while ((s1[c] == s2[c]) && (s1[c] != '\0') && (s2[c] != '\0'))
-		c++;
-	return (s1[c] - s2[c]);
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] && s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }
 
-void	ft_swap(int *a, int *b)
+int	main(int argc, char *argv[])
 {
-	int aux;
+	int		i;
+	int		j;
+	char	*temp;
 
-	aux = *a;
-	*a = *b;
-	*b = aux;
-}
-
-int		main(int argc, const char **argv)
-{
-	int qty;
-	int c;
-	int d;
-	int arg[argc];
-
-	qty = 1;
-	c = 1;
-	while (qty < argc)
+	i = 0;
+	while (++i < argc - 1)
 	{
-		arg[qty] = qty;
-		qty++;
-	}
-	while (c < argc)
-	{
-		d = c;
-		while (d < argc)
+		j = i + 1;
+		while (j < argc)
 		{
-			if (ft_strcmp(argv[arg[c]], argv[arg[d]]) > 0)
-				ft_swap(&arg[c], &arg[d]);
-			d++;
+			if (ft_strcmp(argv[i], argv[j]) > 0)
+			{
+				temp = argv[j];
+				argv[j] = argv[i];
+				argv[i] = temp;
+			}
+			j++;
 		}
-		ft_putstr(argv[arg[c++]]);
 	}
+	i = 0;
+	while (++i < argc)
+		ft_printf_params(argv[i]);
 	return (0);
 }

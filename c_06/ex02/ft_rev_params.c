@@ -6,16 +6,16 @@
 /*   By: gagir <gagir@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:06:35 by gagir             #+#    #+#             */
-/*   Updated: 2023/08/03 12:06:37 by gagir            ###   ########.fr       */
+/*   Updated: 2023/08/03 16:03:25 by gagir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int c;
-	int d;
+	int	c;
+	int	d;
 
 	c = argc - 1;
 	d = 0;
